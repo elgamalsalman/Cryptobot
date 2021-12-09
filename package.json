@@ -1,0 +1,14 @@
+{
+  "name": "cryptobot",
+  "version": "1.0.0",
+  "description": "A bot that trades with crypto-currencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cryptobot"
+  ],
+  "author": "Salman Elgamal",
+  "license": "MIT"
+}
