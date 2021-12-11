@@ -1,7 +1,6 @@
 const ws = new WebSocket("ws://localhost:3000");
 
 ws.onmessage = event => {
-	console.log(event);
+	const message = JSON.parse(event.data);
+	console.log(message);
 };
-
-console.log("Hello World");
