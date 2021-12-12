@@ -8,10 +8,15 @@
 	<link rel="icon" href="images/icon.png" />
 	<link rel="stylesheet" href="css/shared.css" />
 	<link rel="stylesheet" href="css/botview.css" />
+	<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
 </head>
 
 <body>
 	<h1>Botview</h1>
-	<script type="module" src="js/botview.js"></script>
+	<div id="price-chart"></div>
+	<div id="rsi-chart"></div>
+
+	<script type="module" src="js/charter.js"></script>
+	<script type="module" src="js/dataListener.js"></script>
 </body>
 </html>

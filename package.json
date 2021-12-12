@@ -4,7 +4,7 @@
   "description": "A bot that trades with crypto-currencies",
   "main": "server.js",
   "scripts": {
-		"start": "nodemon --exec node_modules/.bin/babel-node server.js",
+    "start": "nodemon --exec node_modules/.bin/babel-node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,7 +17,7 @@
     "express": "^4.17.1",
     "lightweight-charts": "^3.7.0",
     "node-fetch": "^3.1.0",
-    "talib": "^1.1.4",
+    "tulind": "^0.8.20",
     "ws": "^8.3.0"
   },
   "devDependencies": {

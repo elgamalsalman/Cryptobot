@@ -6,20 +6,14 @@ import express from "express";
 import { WebSocketServer } from "ws";
 
 import botsRouter from "./routes/bots.js";
-import { streamPriceData } from "./controllers/priceStreamer.js";
+import { fetchHistoricalData, streamLiveData } from "./controllers/priceStreamer.js";
+import { streamClients } from "./controllers/clientStreamer.js";
 
 const port = 3000;
 
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
-
-wss.on("connection", (ws) => {
-  console.log("New connection!");
-	fs.readFile(path.join(process.cwd(), "data", "SOLETH.json"), "utf8", (err, priceData) => {
-		ws.send(priceData);
-	});
-});
 
 app.use("/", express.static(path.join(process.cwd(), "public")));
 
@@ -29,4 +23,14 @@ server.listen(port, () => {
 	console.log(`Listening on port ${port}`);
 });
 
-streamPriceData();
+(async () => {
+  await fetchHistoricalData();
+	streamLiveData();
+	streamClients(wss);
+})();
+
+//import tulind from "tulind";
+//
+//console.log(tulind.indicators.sma);
+//console.log(tulind.indicators.rsi);
+//console.log(tulind.indicators.bbands);
