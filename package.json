@@ -2,9 +2,10 @@
   "name": "cryptobot",
   "version": "1.0.0",
   "description": "A bot that trades with crypto-currencies",
+  "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --exec node_modules/.bin/babel-node server.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,9 +14,9 @@
   "author": "Salman Elgamal",
   "license": "MIT",
   "dependencies": {
-    "ccxt": "^1.63.43",
     "express": "^4.17.1",
     "lightweight-charts": "^3.7.0",
+    "moment": "^2.29.1",
     "node-fetch": "^3.1.0",
     "tulind": "^0.8.20",
     "ws": "^8.3.0"

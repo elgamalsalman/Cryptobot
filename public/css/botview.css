@@ -1,8 +1,129 @@
-#price-chart {
-	width: 100vw;
-	height: 50vh; 
+/******************TEMPLATES********************/
+
+.bot-trade {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.25rem 0;
+	border-radius: 0.5rem;
+	padding: 0.35rem;
+
+	background: #0f1219;
 }
+
+.bot-trade.buy .bot-trade-type {
+	color: var(--green);
+}
+
+.bot-trade.sell .bot-trade-type {
+	color: var(--red);
+}
+
+.bot-card {
+	padding: 1rem;
+
+	background: var(--background-color-dark);
+	color: var(--text-color);
+	box-shadow: 5px 5px 5px 0px #000;
+}
+
+.bot-name {
+	margin: 0px;
+	text-align: center;
+
+	font-size: 1rem;
+	font-family: monospace;
+}
+
+.coin-distribution-amounts,
+.coin-distribution-titles {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.25rem;
+	font-weight: bold;
+}
+
+.coin-distribution-base-amount,
+.coin-distribution-base-title {
+	color: var(--green);
+}
+
+.coin-distribution-quote-title,
+.coin-distribution-quote-amount {
+	color: var(--red);
+}
+
+.coin-distribution-bar {
+	position: relative;
+}
+
+.coin-distribution-indicator-bar,
+.coin-distribution-background-bar {
+	height: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.coin-distribution-indicator-bar {
+	min-width: 3%; max-width: 97%;
+	position: absolute;
+	top: 0; left: 0;
+	background: var(--green);
+}
+
+.coin-distribution-background-bar {
+	background: var(--red);
+}
+
+.bot-performance-chart {
+	width: 100%;
+	height: 100px;
+	margin: 0.5rem 0;
+}
+
+/******************MAIN********************/
+main {
+	grid-template-rows: 3fr 1fr;
+	grid-template-columns: 4fr 1fr;
+}
+
+#price-chart {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
 #rsi-chart {
-	width: 100vw;
-	height: 25vh; 
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+#bot-panel {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+
+	overflow: scroll;
+}
+
+/***************BOT PANEL*****************/
+#bot-panel {
+	text-align: center;
+	padding: 10px;
+	
+	color: var(--text-color);
+}
+
+#bot-panel.empty {
+	margin: auto;
+}
+
+.bot-card {
+	margin-bottom: 20px;
+	border-radius: 10px;
+
+	background: var(--background-color-dark);
+	box-shadow: #101010 3px 3px 5px 0px;
 }

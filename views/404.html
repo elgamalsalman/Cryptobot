@@ -5,12 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Botview</title>
-	<link rel="icon" href="images/icon.png" />
+	<link rel="icon" href="images/botviewLogoBlack.png" />
 	<link rel="stylesheet" href="css/shared.css" />
 	<link rel="stylesheet" href="css/404.css" />
 </head>
 
 <body>
-	<h1>Market not available</h1>
+	<header class="main-header">
+		<div class="main-header-cell logo-cell">
+			<div class="inner-cell clickable">
+				<div class="logo"></div>
+			</div>
+		</div>
+		<div class="main-header-cell symbol-cell">
+			<input class="inner-cell clickable base-input" type="text" name="base" />
+			/
+			<input class="inner-cell clickable quote-input" type="text" name="quote" />
+		</div>
+		<div class="main-header-cell interval-cell">
+			<div class="inner-cell">1m</div>
+		</div>
+	</header>
+
+	<main>
+		<h1 class="message-404"></h1>
+	</main>
+
+	<script type="module" src="js/globals.js"></script>
+	<script type="module" src="js/header.js"></script>
+	<script type="module" src="js/404.js"></script>
 </body>
 </html>

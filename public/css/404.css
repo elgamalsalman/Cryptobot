@@ -1,0 +1,6 @@
+main {
+	color: var(--text-color);
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}

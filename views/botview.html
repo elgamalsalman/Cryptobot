@@ -5,18 +5,69 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Botview</title>
-	<link rel="icon" href="images/icon.png" />
+	<link rel="icon" href="images/botviewLogoBlack.png" />
 	<link rel="stylesheet" href="css/shared.css" />
 	<link rel="stylesheet" href="css/botview.css" />
 	<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
 </head>
 
 <body>
-	<h1>Botview</h1>
-	<div id="price-chart"></div>
-	<div id="rsi-chart"></div>
+	<!-- templates -->
+	<template id="bot-trade-template">
+		<div class="bot-trade">
+			<span class="bot-trade-type">BUY</span>
+			<span class="bot-trade-amount">0.000152</span>
+			<span class="bot-trade-price">46300.00</span>
+		</div>
+	</template>
+	<template id="bot-card-template">
+		<div class="bot-card">
+			<h1 class="bot-name">BOT</h1>
+			<div class="coin-distribution">
+				<div class="coin-distribution-titles">
+					<span class="coin-distribution-base-title">BTC</span>
+					<span class="coin-distribution-quote-title">USDT</span>
+				</div>
+				<div class="coin-distribution-bar">
+					<div class="coin-distribution-background-bar"></div>
+					<div class="coin-distribution-indicator-bar"></div>
+				</div>
+				<div class="coin-distribution-amounts">
+					<span class="coin-distribution-base-amount">0.0001</span>
+					<span class="coin-distribution-quote-amount">10.00</span>
+				</div>
+			</div>
+			<div class="bot-performance-chart"></div>
+			<div class="bot-trades"></div>
+		</div>
+	</template>
+	<!-- /templates -->
 
-	<script type="module" src="js/charter.js"></script>
+	<header class="main-header">
+		<div class="main-header-cell logo-cell">
+			<div class="inner-cell clickable">
+				<div class="logo"></div>
+			</div>
+		</div>
+		<div class="main-header-cell symbol-cell">
+			<input class="inner-cell clickable base-input" type="text" name="base" />
+			<div style="padding: 0 0.5rem;">/</div>
+			<input class="inner-cell clickable quote-input" type="text" name="quote" />
+		</div>
+		<div class="main-header-cell interval-cell">
+			<div class="inner-cell">15m</div>
+		</div>
+	</header>
+
+	<main>
+		<div id="price-chart"></div>
+		<div id="rsi-chart"></div>
+		<div id="bot-panel"></div>
+	</main>
+
+	<script type="module" src="js/globals.js"></script>
+	<script type="module" src="js/header.js"></script>
 	<script type="module" src="js/dataListener.js"></script>
+	<script type="module" src="js/charter.js"></script>
 </body>
 </html>
